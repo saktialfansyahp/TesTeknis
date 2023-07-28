@@ -24,9 +24,9 @@ Mongodb 4.2 (https://www.mongodb.com/try/download/community)
 
 Berikut adalah langkah-langkah instalasi proyek ini:
 
-*Clone Repository*
+### Clone Repository
 
-#!/bin/bash
+# bash
 git clone https://github.com/nama-akun-github/rest-api-penjualan-kendaraan.git
 
 *Pindah ke Direktori Proyek*
