@@ -7,6 +7,57 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Rest Api Penjualan Kendaraan
+
+Rest API Penjualan Kendaraan adalah proyek yang bertujuan untuk menyediakan layanan API untuk manajemen penjualan kendaraan. Proyek ini dibangun dengan menggunakan framework Laravel 8, PHP 8, dan Mongodb 4.2.
+
+## Persyaratan Sistem
+
+Pastikan Anda telah memenuhi persyaratan sistem berikut sebelum menginstal proyek ini:
+
+PHP versi 8.x.x
+Composer (https://getcomposer.org/)
+Web server (misalnya Apache, Nginx)
+Mongodb 4.2 (https://www.mongodb.com/try/download/community)
+
+## Instalasi
+
+Berikut adalah langkah-langkah instalasi proyek ini:
+
+Clone Repository
+
+bash
+git clone https://github.com/nama-akun-github/rest-api-penjualan-kendaraan.git
+Pindah ke Direktori Proyek
+
+bash
+cd rest-api-penjualan-kendaraan
+Instal Dependencies
+
+bash
+composer install
+Buat File .env
+
+Duplikat file .env.example dan ubah namanya menjadi .env. Kemudian konfigurasi file .env sesuai dengan lingkungan pengembangan Anda, termasuk konfigurasi database Mongodb.
+
+Generate APP_KEY
+
+Jalankan perintah berikut untuk menghasilkan APP_KEY:
+
+vbnet
+php artisan key:generate
+Migrasi Database
+
+Jalankan Server Lokal
+
+php artisan serve
+Akses Aplikasi
+
+Buka browser atau aplikasi API client (seperti Postman) dan akses API di http://localhost:8000/api.
+
+Dokumentasi API
+Dokumentasi lengkap API dapat ditemukan di sini.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
