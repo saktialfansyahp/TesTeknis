@@ -26,17 +26,14 @@ Berikut adalah langkah-langkah instalasi proyek ini:
 
 ### Clone Repository
 
-# !/bin/bash
 git clone https://github.com/nama-akun-github/rest-api-penjualan-kendaraan.git
 
 ### Pindah ke Direktori Proyek
 
-# !/bin/bash
 cd rest-api-penjualan-kendaraan
 
 ### Instal Dependencies
 
-# !/bin/bash
 composer install
 
 ### Buat File .env
@@ -47,12 +44,10 @@ Duplikat file .env.example dan ubah namanya menjadi .env. Kemudian konfigurasi f
 
 Jalankan perintah berikut untuk menghasilkan APP_KEY:
 
-# !/bin/bash
 php artisan key:generate
 
 ### Jalankan Server Lokal
 
-# !/bin/bash
 php artisan serve
 
 ### Akses Aplikasi
