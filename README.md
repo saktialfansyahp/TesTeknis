@@ -24,38 +24,42 @@ Mongodb 4.2 (https://www.mongodb.com/try/download/community)
 
 Berikut adalah langkah-langkah instalasi proyek ini:
 
-Clone Repository
+*Clone Repository*
 
-bash
+#!/bin/bash
 git clone https://github.com/nama-akun-github/rest-api-penjualan-kendaraan.git
-Pindah ke Direktori Proyek
 
-bash
+*Pindah ke Direktori Proyek*
+
+#!/bin/bash
 cd rest-api-penjualan-kendaraan
-Instal Dependencies
 
-bash
+*Instal Dependencies*
+
+#!/bin/bash
 composer install
-Buat File .env
+
+*Buat File .env*
 
 Duplikat file .env.example dan ubah namanya menjadi .env. Kemudian konfigurasi file .env sesuai dengan lingkungan pengembangan Anda, termasuk konfigurasi database Mongodb.
 
-Generate APP_KEY
+*Generate APP_KEY*
 
 Jalankan perintah berikut untuk menghasilkan APP_KEY:
 
-vbnet
+#!/bin/bash
 php artisan key:generate
-Migrasi Database
 
-Jalankan Server Lokal
+*Jalankan Server Lokal*
 
+#!/bin/bash
 php artisan serve
-Akses Aplikasi
+
+*Akses Aplikasi*
 
 Buka browser atau aplikasi API client (seperti Postman) dan akses API di http://localhost:8000/api.
 
-Dokumentasi API
+*Dokumentasi API*
 Dokumentasi lengkap API dapat ditemukan di sini.
 
 ## About Laravel
