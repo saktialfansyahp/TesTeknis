@@ -46,6 +46,18 @@ Jalankan perintah berikut untuk menghasilkan APP_KEY:
 
 php artisan key:generate
 
+### Generate Secret Key JWT
+
+php artisan jwt:secret
+
+### Konfigurasi .env untuk MongoDB:
+Tambahkan koneksi database MongoDB ke file .env Anda. Pastikan Anda mengatur nilai DB_CONNECTION menjadi mongodb, dan sesuaikan host, port, dan nama database dengan konfigurasi MongoDB Anda. Contoh:
+
+DB_CONNECTION=mongodb
+DB_HOST=127.0.0.1
+DB_PORT=27017
+DB_DATABASE=nama_database_anda
+
 ### Jalankan Server Lokal
 
 php artisan serve
