@@ -6,31 +6,57 @@ use App\Models\User;
 use App\Models\Mobil;
 use App\Models\Motor;
 use App\Models\Kendaraan;
+use App\Services\MobilService;
+use App\Services\MotorService;
 
 class KendaraanRepository
 {
     private Kendaraan $kendaraan;
     private Mobil $mobil;
     private Motor $motor;
+    private MobilService $mobilService;
+    private MotorService $motorService;
 	public function __construct()
 	{
 		$this->kendaraan = new Kendaraan();
 		$this->mobil = new Mobil();
         $this->motor = new Motor();
+        $this->mobilService = new MobilService();
+        $this->motorService = new MotorService();
 	}
-    public function getAll() : Object
-    {
-        $mobil = Mobil::with('kendaraan')->get();
-        $motor = Motor::with('kendaraan')->get();
-        // $kendaraan = Kendaraan::get();
-        $kendaraan = $mobil->merge($motor);
-        return $kendaraan;
-    }
     public function getById($id)
-	{
-		$task = User::with('kendaraan')->find($id);
-		return $task;
-	}
+    {
+        $kendaraan = Kendaraan::with('mobil', 'motor')->find($id);
+        if ($this->kendaraan->hasMobil($kendaraan) == true){
+            $kendaraan = $this->kendaraan->removeMotor($kendaraan);
+            return $kendaraan;
+        } else if ($this->kendaraan->hasMotor($kendaraan) == true){
+            $kendaraan = $this->kendaraan->removeMobil($kendaraan);
+            return $kendaraan;
+        }
+    }
+    public function getBy($jenis)
+    {
+        $kendaraan = Kendaraan::with('mobil', 'motor')->get();
+        if ($this->kendaraan->hasMobil($kendaraan) == true){
+            $kendaraan = $this->kendaraan->removeMotor($kendaraan);
+            return $kendaraan;
+        } else if ($this->kendaraan->hasMotor($kendaraan) == true){
+            $kendaraan = $this->kendaraan->removeMobil($kendaraan);
+            return $kendaraan;
+        }
+    }
+    public function getAll()
+    {
+        $stokMobil = $this->mobilService->getAll();
+        $stokMotor = $this->motorService->getAll();
+        // $kendaraan = Kendaraan::get();
+        $response = [
+            'Mobil' => $stokMobil,
+            'Motor' => $stokMotor,
+        ];
+        return $response;
+    }
     public function store($data) : Object
     {
         $dataBaru = new $this->kendaraan;
