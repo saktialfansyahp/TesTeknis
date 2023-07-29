@@ -33,7 +33,7 @@ git clone https://github.com/saktialfansyahp/TesTeknis.git
 ### Pindah ke Direktori Proyek
 
 ```bash
-cd rest-api-penjualan-kendaraan
+cd TesTeknis
 ```
 
 ### Instal Dependencies
