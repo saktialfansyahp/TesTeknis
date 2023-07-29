@@ -20,14 +20,3 @@ use App\Http\Controllers\SiswaController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/getKelas', [KelasController::class, 'index']);
-Route::get('/detailKelas', [KelasController::class, 'getDetailClass']);
-Route::post('/createKelas', [KelasController::class, 'create']);
-Route::post('/updateKelas/{id}', [KelasController::class, 'update']);
-Route::get('/getSiswa', [SiswaController::class, 'index']);
-Route::get('/detailSiswa', [SiswaController::class, 'getSiswa']);
-Route::post('/createSiswa', [SiswaController::class, 'create']);
-Route::post('/createMapel', [MapelController::class, 'create']);
-Route::post('/createNilai', [NilaiController::class, 'create']);
-Route::get('/nilai', [NilaiController::class, 'getNilai']);
-Route::get('/getNilai', [NilaiController::class, 'index']);
