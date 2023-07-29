@@ -18,6 +18,36 @@ class PenjualanController extends Controller
 		$this->motorService = new MotorService();
         $this->penjualanService = new PenjualanService();
 	}
+    public function get()
+	{
+		try {
+            $result = $this->penjualanService->getAll();
+            if (count($result) === 0){
+                $result = null;
+            }
+        } catch (Exception $e) {
+            $result = [
+                'status' => 500,
+                'error' => $e->getMessage()
+            ];
+        }
+        return response()->json($result);
+	}
+    public function getby($kendaraan)
+	{
+		try {
+            $result = $this->penjualanService->getBy($kendaraan);
+            if (count($result) === 0){
+                $result = null;
+            }
+        } catch (Exception $e) {
+            $result = [
+                'status' => 500,
+                'error' => $e->getMessage()
+            ];
+        }
+        return response()->json($result);
+	}
     public function stok(){
         $stokMobil = $this->mobilService->getAll();
         $stokMotor = $this->motorService->getAll();
