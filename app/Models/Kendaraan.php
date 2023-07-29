@@ -28,4 +28,38 @@ class Kendaraan extends Model
     {
         return $this->hasOne(Mobil::class, 'kendaraan_id');
     }
+    public function penjualan()
+    {
+        return $this->hasMany(Penjualan::class, 'kendaraan_id');
+    }
+    public function removeMotor($kendaraan)
+    {
+        if ($kendaraan->relationLoaded('motor')) {
+            unset($kendaraan->motor);
+        }
+        return $kendaraan;
+    }
+    public function removeMobil($kendaraan)
+    {
+        if ($kendaraan->relationLoaded('mobil')) {
+            unset($kendaraan->mobil);
+        }
+        return $kendaraan;
+    }
+    public function hasMobil($kendaraan){
+        if($kendaraan->mobil != null){
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+    public function hasMotor($kendaraan){
+        if($kendaraan->motor != null){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
