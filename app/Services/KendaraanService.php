@@ -22,6 +22,11 @@ class KendaraanService{
 		$task = $this->kendaraanRepository->getById($id);
 		return $task;
 	}
+    public function getBy($kendaraan)
+	{
+		$task = $this->kendaraanRepository->getBy($kendaraan);
+		return $task;
+	}
     public function store($data) : Object
     {
         $validator = Validator::make($data, [
@@ -54,7 +59,7 @@ class KendaraanService{
             return response()->json(['error' => 'Kendaraan not found'], 404);
         }
         $this->kendaraanRepository->update($data, $id);
-        return $kendaraan->fresh();
+        // return $kendaraan->fresh();
     }
     public function delete($id)
     {
