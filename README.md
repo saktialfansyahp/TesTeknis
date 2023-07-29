@@ -26,15 +26,21 @@ Berikut adalah langkah-langkah instalasi proyek ini:
 
 ### Clone Repository
 
-git clone https://github.com/nama-akun-github/rest-api-penjualan-kendaraan.git
+```bash
+git clone https://github.com/saktialfansyahp/TesTeknis.git
+```
 
 ### Pindah ke Direktori Proyek
 
+```bash
 cd rest-api-penjualan-kendaraan
+```
 
 ### Instal Dependencies
 
+```bash
 composer install
+```
 
 ### Buat File .env
 
@@ -44,30 +50,39 @@ Duplikat file .env.example dan ubah namanya menjadi .env. Kemudian konfigurasi f
 
 Jalankan perintah berikut untuk menghasilkan APP_KEY:
 
+```bash
 php artisan key:generate
+```
 
 ### Generate Secret Key JWT
 
+```bash
 php artisan jwt:secret
+```
 
 ### Konfigurasi .env untuk MongoDB:
 Tambahkan koneksi database MongoDB ke file .env Anda. Pastikan Anda mengatur nilai DB_CONNECTION menjadi mongodb, dan sesuaikan host, port, dan nama database dengan konfigurasi MongoDB Anda. Contoh:
 
-DB_CONNECTION=mongodb
-DB_HOST=127.0.0.1
-DB_PORT=27017
-DB_DATABASE=nama_database_anda
+`DB_CONNECTION=mongodb`
+
+`DB_HOST=127.0.0.1`
+
+`DB_PORT=27017`
+
+`DB_DATABASE=nama_database_anda`
 
 ### Jalankan Server Lokal
 
+```bash
 php artisan serve
+```
 
 ### Akses Aplikasi
 
 Buka browser atau aplikasi API client (seperti Postman) dan akses API di http://localhost:8000/api.
 
 ### Dokumentasi API
-Dokumentasi lengkap API dapat ditemukan di sini.
+Dokumentasi lengkap API dapat ditemukan di [sini](https://www.postman.com/cloudy-meadow-962068/workspace/tes-sinergi-peta/collection/20215319-12c8172b-4070-4156-9a9c-27b6fb07d48e?action=share&creator=20215319).
 
 ## About Laravel
 
